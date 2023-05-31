@@ -2,13 +2,11 @@
 <html>
 <head>
   <title>Calculator</title>
-  <link rel="stylesheet" href="nathanstyle.css">
+  <script src="calculator.js"></script>
 </head>
 <body>
   <h1>Calculator</h1>
-
-  <input type="text" id="display" disabled>
-
+  <input type="text" id="display">
   <div id="buttons">
     <button onclick="handleInput('1')">1</button>
     <button onclick="handleInput('2')">2</button>
@@ -21,42 +19,15 @@
     <button onclick="handleInput('9')">9</button>
     <button onclick="handleInput('0')">0</button>
   </div>
-
   <div id="operators">
     <button onclick="handleInput('+')">+</button>
     <button onclick="handleInput('-')">-</button>
     <button onclick="handleInput('*')">*</button>
     <button onclick="handleInput('/')">/</button>
+    <button onclick="calculate()">=</button>
   </div>
+  <button onclick="handleReset()">Reset</button>
 
-  <button id="calculateBtn" onclick="calculate()">Calculate</button>
-
-  <script>
-    // Function to handle user input and perform actions
-    function handleInput(input) {
-      var display = document.getElementById("display");
-
-      // Check if the first input is "i want games"
-      if (display.value === "i want games") {
-        // Open a link to a Google search for video games
-        window.open("https://www.google.com/search?q=video+games", "_blank");
-      } else {
-        // Append the input to the display
-        display.value += input;
-      }
-    }
-
-    // Function to handle the calculation
-    function calculate() {
-      var display = document.getElementById("display");
-      var expression = display.value;
-
-      // Perform the calculation or other actions based on the expression
-
-      // Clear the display
-      display.value = "";
-    }
-  </script>
 </body>
 </html>
 
